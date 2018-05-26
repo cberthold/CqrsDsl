@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2000
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CqrsDsl", "CqrsDsl\CqrsDsl.csproj", "{B1F4E514-F4F2-4456-8DD9-09630CC55FD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CqrsDsl", "CqrsDsl\CqrsDsl.csproj", "{B1F4E514-F4F2-4456-8DD9-09630CC55FD1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example", "Example\Example.csproj", "{9BD5A593-9F5D-4311-8551-AD8E65C47E06}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,11 +17,12 @@ Global
 		{B1F4E514-F4F2-4456-8DD9-09630CC55FD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1F4E514-F4F2-4456-8DD9-09630CC55FD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1F4E514-F4F2-4456-8DD9-09630CC55FD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BD5A593-9F5D-4311-8551-AD8E65C47E06}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BD5A593-9F5D-4311-8551-AD8E65C47E06}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BD5A593-9F5D-4311-8551-AD8E65C47E06}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BD5A593-9F5D-4311-8551-AD8E65C47E06}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {0D8281D4-D5A1-4A57-A7D9-258F0882CBDA}
 	EndGlobalSection
 EndGlobal

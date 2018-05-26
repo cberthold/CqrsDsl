@@ -1,0 +1,26 @@
+﻿project Example1
+	namespace Example1.Level1.Commands
+		command-def CreateExampleCommand : field1 guid, field2 int, field3 decimal
+
+	namespace Example1.Level1.Events
+		event-def CreateExampleEvent : field1 guid, field2 int, field3 decimal
+
+	namespace Example1.Level1.VO
+		vo-def CreateExampleVO : field1 guid, field2 int, field3 decimal
+
+	namespace Example1.Level1.Transport
+		dto-def CreateExampleDTO : field1 guid, field2 int, field3 decimal
+
+project Example2
+	namespace Example2.Level1.Commands
+		command-def CreateExampleCommand : field1 guid, field2 int, field3 decimal
+
+	namespace Example2.Level1.Events
+		event-def CreateExampleEvent : field1 guid, field2 int, field3 decimal
+
+	namespace Example2.Level1.VO
+		vo-def CreateExampleVO : field1 guid, field2 int, field3 decimal
+
+	namespace Example2.Level1.Transport
+		dto-def CreateExampleDTO : field1 guid, field2 int, field3 decimal
+		
