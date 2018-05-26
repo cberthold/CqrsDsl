@@ -59,7 +59,7 @@ namespace CqrsDsl
             }
             else if (node is CqrsParser.FieldPropertyTypeContext fieldTypeContext)
             {
-                text = $"{text} - {fieldTypeContext.IDENTIFIER()}";
+                text = $"{text} - {fieldTypeContext.GetText()}";
             }
             else if (node is CqrsParser.EventNameContext eventNameContext)
             {
@@ -78,6 +78,14 @@ namespace CqrsDsl
             {
                 string name = projectNameContext.children.Aggregate(string.Empty, (a, t) => a + t.GetText());
                 text = $"{text} - {name}";
+            }
+            else if (node is CqrsParser.DataTransferObjectNameContext dtoNameContext)
+            {
+                text = $"{text} - {dtoNameContext.IDENTIFIER()}";
+            }
+            else if (node is CqrsParser.ValueObjectNameContext voNameContext)
+            {
+                text = $"{text} - {voNameContext.IDENTIFIER()}";
             }
             return text;
         }
