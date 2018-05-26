@@ -10,12 +10,14 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            string file = File.ReadAllText("Example.cqrsx");
-            AntlrInputStream inputStream = new AntlrInputStream(file);
-            CqrsLexer lexer = new CqrsLexer(inputStream);
-            CommonTokenStream commonTokenStream = new CommonTokenStream(lexer);
-            CqrsParser parser = new CqrsParser(commonTokenStream);
+            var file = File.ReadAllText("Example.cqrsx");
+            var inputStream = new AntlrInputStream(file);
+            var lexer = new CqrsLexer(inputStream);
+            var commonTokenStream = new CommonTokenStream(lexer);
             
+            var parser = new CqrsParser(commonTokenStream);
+            var errorListener = new ConsoleErrorListener<IToken>();
+            parser.AddErrorListener(errorListener);
             var vistor = new DebugVisitor();
             var dictionary = parser.dictionary();
             vistor.VisitDictionary(dictionary);
