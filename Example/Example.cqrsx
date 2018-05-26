@@ -3,7 +3,7 @@
 		command-def CreateExampleCommand : field1 guid, field2 int, field3 decimal
 
 	namespace Example1.Level1.Events
-		event-def CreateExampleEvent : field4 guid, field5 int, field6 decimal
+		event-def CreateExampleEvent : field4 guid, field5 int?[], field6 decimal[]
 
 	namespace Example1.Level1.VO
 		vo-def CreateExampleVO : field7 guid, field8 int, field9 decimal
