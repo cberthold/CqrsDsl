@@ -1,15 +1,28 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <ApplicationIcon />
-    <OutputType>Exe</OutputType>
-    <StartupObject>CqrsDsl.Program</StartupObject>
-     </PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Antlr4" Version="4.6.4" />
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.4" />
+    <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.5-beta001">
+      <PrivateAssets>All</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Antlr4 Include="Cqrs.g4">
+      <Generator>MSBuild:Compile</Generator>
+      <CustomToolNamespace>CqrsDsl.Generated</CustomToolNamespace>
+      <Listener>False</Listener>
+      <Visitor>True</Visitor>
+    </Antlr4>
+  </ItemGroup>
+
+  <!-- Use this if you don't want to depend on the Java tool -->
+  <PropertyGroup>
+    <Antlr4UseCSharpGenerator>True</Antlr4UseCSharpGenerator>
+  </PropertyGroup>
 
 </Project>
