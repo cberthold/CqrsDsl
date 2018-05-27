@@ -72,10 +72,10 @@ fieldDefinition
 	;
 
 fieldPropertyType
-	: (
-	PREDEFINED_TYPE
-	| IDENTIFIER
-	) OPTIONAL? ARRAY?
+	: 
+	(PREDEFINED_TYPE | IDENTIFIER)
+	(OPTIONAL | REQUIRED)
+	ARRAY?
 	;
 
 fieldPropertyName
@@ -117,24 +117,29 @@ System.Boolean (bool)
 System.Decimal (decimal)
 
 */
-fragment STRING_LITERAL		 : ('string' | 'System.String')	;
-fragment OBJECT_LITERAL		 : ('object' | 'System.Object')	;
-fragment SBYTE_LITERAL		 : ('sbyte' | 'System.SByte')	;
-fragment BYTE_LITERAL		 : ('byte' | 'System.Byte')	;
-fragment SHORT_LITERAL		 : ('short' | 'System.Int16')	;
-fragment USHORT_LITERAL		 : ('ushort' | 'System.UInt16')	;
-fragment INT_LITERAL		 : ('int' | 'System.Int32')	;
-fragment UINT_LITERAL		 : ('uint' | 'System.UInt32')	;
-fragment LONG_LITERAL		 : ('long' | 'System.Int64')	;
-fragment ULONG_LITERAL		 : ('ulong' | 'System.UInt64')	;
-fragment CHAR_LITERAL		 : ('char' | 'System.Char')	;
-fragment FLOAT_LITERAL		 : ('float' | 'System.Single')	;
-fragment DOUBLE_LITERAL		 : ('double' | 'System.Double')	;
-fragment BOOL_LITERAL		 : ('bool' | 'System.Boolean')	;
-fragment DECIMAL_LITERAL	 : ('decimal' | 'System.Decimal')	;
+fragment GUID_LITERAL		 : ('System.Guid' | 'Guid')	;
+fragment STRING_LITERAL		 : ('string' | 'System.String' | 'String')	;
+fragment OBJECT_LITERAL		 : ('object' | 'System.Object' | 'Object')	;
+fragment SBYTE_LITERAL		 : ('sbyte' | 'System.SByte' | 'SByte')	;
+fragment BYTE_LITERAL		 : ('byte' | 'System.Byte' | 'Byte')	;
+fragment SHORT_LITERAL		 : ('short' | 'System.Int16' | 'Int16')	;
+fragment USHORT_LITERAL		 : ('ushort' | 'System.UInt16' | 'UInt16')	;
+fragment INT_LITERAL		 : ('int' | 'System.Int32' | 'Int32')	;
+fragment UINT_LITERAL		 : ('uint' | 'System.UInt32' | 'UInt32')	;
+fragment LONG_LITERAL		 : ('long' | 'System.Int64' | 'Int64')	;
+fragment ULONG_LITERAL		 : ('ulong' | 'System.UInt64' | 'UInt64')	;
+fragment CHAR_LITERAL		 : ('char' | 'System.Char' | 'Char')	;
+fragment FLOAT_LITERAL		 : ('float' | 'System.Single' | 'Single')	;
+fragment DOUBLE_LITERAL		 : ('double' | 'System.Double' | 'Double')	;
+fragment BOOL_LITERAL		 : ('bool' | 'System.Boolean' | 'Boolean')	;
+fragment DECIMAL_LITERAL	 : ('decimal' | 'System.Decimal' | 'Decimal')	;
+fragment DATE_LITERAL		 : ('date' | 'localdate')	;
+fragment TIME_LITERAL		 : ('time' | 'localtime')	;
+fragment DATETIME_LITERAL	 : ('localdatetime' | 'datetime' | 'System.DateTime' | 'DateTime')	;
 
 PREDEFINED_TYPE
-	: (STRING_LITERAL
+	: (GUID_LITERAL
+	| STRING_LITERAL
 	| OBJECT_LITERAL
 	| SBYTE_LITERAL
 	| BYTE_LITERAL
@@ -148,7 +153,10 @@ PREDEFINED_TYPE
 	| FLOAT_LITERAL
 	| DOUBLE_LITERAL
 	| BOOL_LITERAL
-	| DECIMAL_LITERAL)
+	| DECIMAL_LITERAL
+	| DATE_LITERAL
+	| TIME_LITERAL
+	| DATETIME_LITERAL)
 	;
 
 
