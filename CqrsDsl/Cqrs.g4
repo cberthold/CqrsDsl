@@ -5,15 +5,17 @@ grammar Cqrs;
  */
 
 dictionary	
-	: projectAssignments+ EOF
+	: (projectAssignment)+ EOF
 	;
 
-projectAssignments
-	: (projectAssignment namespaceAssignments+)+
+projectAssignment
+	: PROJECT projectName TERMINATE? 
+		(namespaceAssignment)+
 	;
 
-namespaceAssignments
-	: (namespaceAssignment definitions)+
+namespaceAssignment
+	: NS namespaceName TERMINATE? 
+		(definitions)+
 	;
 
 definitions 
@@ -22,20 +24,11 @@ definitions
 			| eventDefinition
 			| valueObjectDefinition
 			| dataTransferObjectDefinition
-		)+
-	;
-
- 
-projectAssignment 
-	: PROJECT projectName TERMINATE?
+		)
 	;
 
 projectName 
 	: IDENTIFIER (DOT IDENTIFIER)*
-	;
-
-namespaceAssignment 
-	: NS namespaceName TERMINATE?
 	;
 
 namespaceName 
