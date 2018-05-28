@@ -11,11 +11,7 @@ namespace CqrsDsl.Model
 
         public ProjectModel(string projectName)
         {
-            if(projectName == null)
-            {
-                throw new ArgumentNullException(nameof(projectName));
-            }
-            Name = projectName;
+            Name = projectName ?? throw new ArgumentNullException(nameof(projectName));
         }
 
         protected override bool EqualsCore(ProjectModel other)

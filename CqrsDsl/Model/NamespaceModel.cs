@@ -12,17 +12,8 @@ namespace CqrsDsl.Model
 
         public NamespaceModel(ProjectModel projectModel, string namespaceName)
         {
-            if (projectModel == null)
-            {
-                throw new ArgumentNullException(nameof(projectModel));
-            }
-
-            if (namespaceName == null)
-            {
-                throw new ArgumentNullException(nameof(namespaceName));
-            }
-            ProjectModel = projectModel;
-            Name = namespaceName;
+            ProjectModel = projectModel ?? throw new ArgumentNullException(nameof(projectModel));
+            Name = namespaceName ?? throw new ArgumentNullException(nameof(namespaceName));
         }
 
         protected override bool EqualsCore(NamespaceModel other)
