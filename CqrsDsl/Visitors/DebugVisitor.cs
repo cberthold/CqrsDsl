@@ -6,7 +6,7 @@ using Antlr4.Runtime.Misc;
 using Antlr4.Runtime.Tree;
 using CqrsDsl.Generated;
 
-namespace CqrsDsl
+namespace CqrsDsl.Visitors
 {
     public class DebugVisitor : CqrsBaseVisitor<object>
     {
