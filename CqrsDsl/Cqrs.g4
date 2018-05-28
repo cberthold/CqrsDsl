@@ -74,7 +74,7 @@ fieldDefinition
 fieldPropertyType
 	: 
 	(PREDEFINED_TYPE | IDENTIFIER)
-	(OPTIONAL | REQUIRED)
+	(OPTIONAL | REQUIRED)?
 	ARRAY?
 	;
 

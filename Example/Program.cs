@@ -3,6 +3,7 @@ using System.IO;
 using Antlr4.Runtime;
 using CqrsDsl;
 using CqrsDsl.Generated;
+using CqrsDsl.Visitors;
 
 namespace ConsoleApp1
 {
@@ -18,9 +19,9 @@ namespace ConsoleApp1
             var parser = new CqrsParser(commonTokenStream);
             var errorListener = new ConsoleErrorListener<IToken>();
             parser.AddErrorListener(errorListener);
-            var vistor = new DebugVisitor();
-            var dictionary = parser.dictionary();
-            vistor.VisitDictionary(dictionary);
+
+            var languageVisitor = new CqrsDataModelVisitor();
+            var model = languageVisitor.Visit(parser.dictionary());
             Console.ReadKey();
         }
     }
