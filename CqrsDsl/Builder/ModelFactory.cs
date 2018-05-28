@@ -32,5 +32,15 @@ namespace CqrsDsl.Builder
             var model = new NamespaceModel(projectModel, namespaceName);
             return model;
         }
+
+        public static FieldModel CreateFieldModel(string propertyName, string typeName, bool isOptional, bool isRequired, bool isPredefinedType)
+        {
+            return new FieldModel(
+                propertyName, 
+                typeName,
+                isOptional,
+                isRequired,
+                isPredefinedType);
+        }
     }
 }

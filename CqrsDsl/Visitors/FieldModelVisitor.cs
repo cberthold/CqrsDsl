@@ -21,7 +21,17 @@ namespace CqrsDsl.Visitors
         public override FieldModel VisitFieldDefinition([NotNull] FieldDefinitionContext context)
         {
             var propertyName = context.GetPropertyName();
-            return new FieldModel(propertyName);
+            var propertyType = context.fieldPropertyType();
+            var typeName = propertyType.GetTypeName();
+            var isOptional = propertyType.IsOptional();
+            var isRequired = propertyType.IsRequired();
+            var isPredefinedType = propertyType.IsPredefinedType();
+            return ModelFactory.CreateFieldModel(
+                propertyName,
+                typeName,
+                isOptional,
+                isRequired,
+                isPredefinedType);
         }
     }
 }

@@ -22,5 +22,10 @@ namespace CqrsDsl
             return context.GetTokens(REQUIRED).Length == 1;
         }
 
+        public static string GetTypeName(this FieldPropertyTypeContext context)
+        {
+            var typeNameText = context.children.AggregateText();
+            return typeNameText;
+        }
     }
 }
