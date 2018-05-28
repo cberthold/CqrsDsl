@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Antlr4.Runtime;
 
-namespace CqrsDsl
+namespace CqrsDsl.Listeners
 {
     public class ConsoleErrorListener<Symbol> : IAntlrErrorListener<Symbol>
     {

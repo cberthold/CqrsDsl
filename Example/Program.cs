@@ -3,6 +3,7 @@ using System.IO;
 using Antlr4.Runtime;
 using CqrsDsl;
 using CqrsDsl.Generated;
+using CqrsDsl.Listeners;
 using CqrsDsl.Visitors;
 
 namespace ConsoleApp1
