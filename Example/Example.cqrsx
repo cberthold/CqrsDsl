@@ -1,15 +1,44 @@
 ﻿project Example1
 	namespace Example1.Level1.Commands
-		command-def CreateExampleCommand : field1 guid, field2 int, field3 decimal
+		command-def CreateExample1Command : field1 guid, field2 int, field3 decimal
+		command-def CreateExample2Command : field1 guid, field2 int, field3 decimal
+		command-def CreateExample3Command : field1 guid, field2 int, field3 decimal
 
 	namespace Example1.Level1.Events
-		event-def CreateExampleEvent : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample1Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample2Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample3Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample4Event : field4 guid, field5 int?[], field6 decimal[]
 
 	namespace Example1.Level1.VO
-		vo-def CreateExampleVO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample1VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample2VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample3VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample4VO : field7 guid, field8 int, field9 decimal
 
 	namespace Example1.Level1.Transport
-		dto-def CreateExampleDTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample1DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample2DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample3DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample4DTO : field10 guid, field11 int, field12 decimal
+
+	namespace Example1.Level1.Combined
+		command-def CreateExample1Command : field1 guid, field2 int, field3 decimal
+		command-def CreateExample2Command : field1 guid, field2 int, field3 decimal
+		command-def CreateExample3Command : field1 guid, field2 int, field3 decimal
+		event-def CreateExample1Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample2Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample3Event : field4 guid, field5 int?[], field6 decimal[]
+		event-def CreateExample4Event : field4 guid, field5 int?[], field6 decimal[]
+		vo-def CreateExample1VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample2VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample3VO : field7 guid, field8 int, field9 decimal
+		vo-def CreateExample4VO : field7 guid, field8 int, field9 decimal
+		dto-def CreateExample1DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample2DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample3DTO : field10 guid, field11 int, field12 decimal
+		dto-def CreateExample4DTO : field10 guid, field11 int, field12 decimal
+
 /*
 project Example2
 	namespace Example2.Level1.Commands

@@ -67,6 +67,7 @@ namespace CqrsDsl.Builder
 
         private HashSet<ProjectModel> projects;
         private HashSet<NamespaceModel> namespaces;
+        private HashSet<EntityObjectModel> entityObjects;
 
         internal CqrsDataModelBuilder WithProjects(
             IEnumerable<ProjectModel> projects)
@@ -82,11 +83,18 @@ namespace CqrsDsl.Builder
             return this;
         }
 
+        internal CqrsDataModelBuilder WithEntityObjects(IEnumerable<EntityObjectModel> entityObjects)
+        {
+            this.entityObjects = new HashSet<EntityObjectModel>(entityObjects);
+            return this;
+        }
+
         internal CqrsDataModel Build()
         {
-            var model = new CqrsDataModel(
+            var model = ModelFactory.CreateCqrsDataModel(
                 projects,
-                namespaces
+                namespaces,
+                entityObjects
                 );
             return model;
         }

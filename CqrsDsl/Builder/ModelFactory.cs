@@ -7,6 +7,20 @@ namespace CqrsDsl.Builder
 {
     public class ModelFactory
     {
+        public static CqrsDataModel CreateCqrsDataModel(
+            IEnumerable<ProjectModel> projects,
+            IEnumerable<NamespaceModel> namespaces,
+            IEnumerable<EntityObjectModel> entities
+            )
+        {
+            var model = new CqrsDataModel(
+                projects,
+                namespaces,
+                entities
+                );
+            return model;
+        }
+
         public static ProjectModel CreateProjectModel(string projectName)
         {
             var model = new ProjectModel(projectName);

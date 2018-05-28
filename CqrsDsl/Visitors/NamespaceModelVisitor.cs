@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Antlr4.Runtime.Misc;
 using CqrsDsl.Builder;
@@ -22,7 +23,13 @@ namespace CqrsDsl.Visitors
         {
             builder.SetCurrentNamespace(context.GetNamespaceText());
 
-            return builder.CurrentNamespaceModel;
+            var entityVisitor = new EntityObjectModelVisitor();
+
+            var entityObjects = context.definitions().Select(a => entityVisitor.Visit(a));
+
+            return builder
+                .WithEntityObjects(entityObjects)
+                .CurrentNamespaceModel;
         }
     }
 }
