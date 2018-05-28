@@ -13,18 +13,18 @@ namespace CqrsDsl.Visitors
     {
 
         private readonly CqrsDataModelBuilder builder;
+        private readonly EntityObjectModelVisitor entityVisitor;
 
         public NamespaceModelVisitor(CqrsDataModelBuilder builder)
         {
             this.builder = builder;
+            entityVisitor = new EntityObjectModelVisitor(builder);
         }
 
         public override NamespaceModel VisitNamespaceAssignment([NotNull] CqrsParser.NamespaceAssignmentContext context)
         {
             builder.SetCurrentNamespace(context.GetNamespaceText());
-
-            var entityVisitor = new EntityObjectModelVisitor();
-
+            
             var entityObjects = context.definitions().Select(a => entityVisitor.Visit(a));
 
             return builder

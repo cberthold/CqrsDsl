@@ -13,19 +13,20 @@ namespace CqrsDsl.Visitors
     {
 
         private readonly CqrsDataModelBuilder builder;
+        private readonly NamespaceModelVisitor namespaceVisitor;
 
         public ProjectModelVisitor(CqrsDataModelBuilder builder)
         {
             this.builder = builder;
+            namespaceVisitor = new NamespaceModelVisitor(builder);
         }
 
         public override ProjectModel VisitProjectAssignment([NotNull] CqrsParser.ProjectAssignmentContext context)
         {
             builder.SetCurrentProject(context.GetProjectNameText());
 
-            var visitor = new NamespaceModelVisitor(builder);
 
-            var namespaces = context.namespaceAssignment().Select(a => visitor.Visit(a));
+            var namespaces = context.namespaceAssignment().Select(a => namespaceVisitor.Visit(a));
 
             return builder
                 .WithNamespaces(namespaces)
